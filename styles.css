@@ -5,10 +5,27 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: Lato, sans-serif;
     color: #333;
     line-height: 1.6;
     background-color: #f5f5f5;
+}
+/* Centravimui */
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.center-content {
+    text-align: center;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
 }
 
 .container {
@@ -19,16 +36,32 @@ body {
 
 /* Navigacija */
 header {
-    background: #fff;
-    padding: 20px 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative; /* Reikalinga pseudoelementui */
+    //background-image: url('img/visi1.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 40px 0;
     text-align: center;
+    color: white;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 10px solid #f5a623; /* Oranžinis rėmelis */
+    pointer-events: none; /* Kad rėmelis netrukdytų kitiems elementams */
 }
 
 header nav ul {
     list-style: none;
     padding: 0;
     text-align: center;
+    position: relative; /* Kad navigacija būtų rodoma virš pseudoelemento */
+    z-index: 1; /* Užtikrina, kad meniu būtų matomas virš rėmelio */
 }
 
 header nav ul li {
@@ -43,14 +76,17 @@ header nav ul li a {
 }
 
 header nav ul li a:hover {
-    color: #f5a623;
+    color: #fcfbfb;
 }
 
 header h1 {
     margin-top: 20px;
     font-size: 2.5em;
-    color: #f5a623;
+    color: #362d1e;
+    position: relative;
+    z-index: 1; /* Užtikrina, kad antraštė būtų matoma virš pseudoelemento */
 }
+
 
 /* Galerija */
 #galerija {
@@ -97,6 +133,21 @@ header h1 {
 .button:hover {
     background-color: #e09120;
 }
+.button2 {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 10px 20px;
+    background-color: #f5a623;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #e09120;
+}
 
 /* Footer */
 footer {
@@ -105,4 +156,130 @@ footer {
     padding: 20px 0;
     text-align: center;
     margin-top: 50px;
+}
+
+.footer-logo {
+    width: 150px; /* Reguliuokite pagal poreikį */
+    height: auto;
+    display: block;
+    margin: 0 auto 10px; /* Centruoja logotipą ir prideda tarpą apačioje */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background-color: #f5f5f5;
+}
+
+header {
+    background-color: #f5a623;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #f5a623;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 40px;
+    color: #f5a623;
+}
+
+.video-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Trys stulpeliai */
+    gap: 20px;
+    padding: 40px;
+    justify-items: center;
+}
+
+video {
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+video:hover {
+    transform: scale(1.05);
+}
+
+.vertical {
+    height: 400px;
+    width: auto; /* Automatiškai pagal aukštį */
+}
+
+.horizontal {
+    width: 100%;
+    height: auto; /* Automatiškai pagal plotį */
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    margin-top: 40px;
+}
+/* Formos stiliai */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 6px; /* Tarpas tarp kiekvieno formos elemento */
+    width: 100%; /* Užtikrinti, kad forma būtų pilno pločio */
+    max-width: 600px; /* Apriboti formos plotį */
+    margin: 0 auto; /* Centruoti formą */
+}
+
+label {
+    margin-bottom: 2px; /* Tarpas tarp etiketės ir įvesties laukelio */
+    margin-top: 20px; /* Prideda tarpą virš label elemento */
+ }
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+textarea {
+    resize: vertical; /* Kad būtų galima keisti tekstinės srities dydį tik vertikaliai */
+}
+
+.button2 {
+    padding: 10px;
+    background-color: #f5a623;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%; /* Pridėta fiksuoto mygtuko plotis */
+    height: 50px;
+    align-self: flex-start; /* Mygtukas bus kairėje */
+}
+
+.button2:hover {
+    background-color: #e09120;
 }

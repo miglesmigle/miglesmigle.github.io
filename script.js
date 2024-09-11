@@ -1,4 +1,5 @@
 document.querySelector('.button').addEventListener('click', function() {
-    alert('Sužinok daugiau apie kačiukus!');
+    alert('Atsargiai - žiūrėdamas video gali užtrukti ilgai!');
 });
+
 
