@@ -32,6 +32,8 @@ main {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
+   text-align: center; /* Centruoja tekstą ir kitus elementus viduje */
+   
 }
 
 /* Navigacija */
@@ -282,4 +284,88 @@ textarea {
 
 .button2:hover {
     background-color: #e09120;
+}
+/* Užtikriname, kad sekcijos būtų išdėstytos viena po kitos */
+main {
+    display: block;
+}
+
+section {
+    display: block;
+    margin-bottom: 50px; /* Tarpas tarp sekcijų */
+}
+
+/* Galite pridėti ir papildomą stilių galerijos vaizdams */
+.image-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Tarpas tarp vaizdų galerijoje */
+}
+
+.image-gallery img {
+    width: 30%;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.image-gallery img:hover {
+    transform: scale(1.05);
+}
+
+/* Mygtukams */
+.button {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 10px 20px;
+    background-color: #f5a623;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    
+}
+
+.button:hover {
+    background-color: #e09120;
+}
+/* Bendras stilius galerijai2 */
+.image-gallery2 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 stulpeliai */
+    gap: 10px; /* Tarpas tarp nuotraukų */
+    padding: 10px;
+    justify-items: center; /* Centruoja nuotraukas horizontaliai */
+}
+
+/* Horizontalios nuotraukos */
+.image-gallery2 .horizontal {
+    grid-column: span 2; /* Horizontalios nuotraukos užima 2 stulpelius */
+    width: 60%; /* Ištempia nuotrauką per visą plotį */
+    height: auto;
+}
+
+/* Vertikalios nuotraukos */
+.image-gallery2 .vertical {
+    grid-column: span 1; /* Vertikalios nuotraukos užima 1 stulpelį */
+    width: 80%; /* Ištempia nuotrauką per visą plotį */
+    height: auto;
+}
+
+.image-gallery2 img {
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.image-gallery2 img:hover {
+    transform: scale(1.05); /* Zoom efektas hover metu */
+}
+
+#galerija2 .image-gallery {
+    margin-top: 30px; /* didesnio tarpo prieš galeriją */
+}
+.center-content2 {
+    text-align: center;
 }
